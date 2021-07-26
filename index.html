@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/b53a2e5d5c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Lobster&family=Montserrat&family=Open+Sans&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>WeatherApp Wireframe with Week 5 api</title>
+  </head>
+  <body>
+    <div class="container">
+     <div class="bg"></div>
+     <div class="bg bg2"></div>
+     <div class="bg bg3"></div>
+      <section id="search-section">
+        <h6>WeatherApp Wireframe Project with Week 4 JS</h6>
+        <!--start of first row for search layout-->
+        <div class="row justify-content-center">
+          <div class="col">
+            <!-- <div class="input-group"> -->
+               <form id="searching-city"> 
+                 <input
+                  type="text"
+                  class="form-control border-0"
+                  name="search"
+                  id="searching-city-input"
+                  placeholder="search City"
+                />
+                <span class="input-group-btn">
+                <button id="search-city"
+                  type="submit"
+                  class="btn rounded-circle btn-outline-secondary"
+                >
+                  <i class="fas fa-search"></i>
+                </span>
+              </button>
+              </form>
+            <!-- </div> -->
+          </div>
+        </div>
+      </section>
+      <hr />
+      <!--start of weather info section new row-->
+      <section class="weatherInfo">
+        <div class="row justify-content-center">
+          <div class="col justify-content-around">
+            <div class="card">
+              <div class="card-body p-0">
+                <ul id="weather-display" class="locationWeatherDetails">
+                  <li id="city-Name">Search for your City</li>
+                  <hr />
+                  <li>
+                    <div class = temperatureDisplay><Span id="temperature-display">display the temp
+                    </span><span class="unit-display"></span>
+                      <span class="temperatureSpacer"> </span>
+                      <span class="unitSelector">
+                        <!-- Rounded switch -->
+                        <label class="switch">
+                          <input type="checkbox" id="temperature-unit-toggle" disabled/>
+                          <span class="slider round">
+                            <a href="#" id = "celcius-temperature">°C</a>
+                            <a href="#" id = "fahrenheit-temperature">°F</a> 
+                        </label>
+                      </span>
+                    </div>
+                    <hr />
+                  </li>
+                  <section id="search-section">
+                    <div>
+                    <li id = "weatherFeelDetails">Feels like <span class="unit-display"></span></li>
+                    <li class="embeddedWeatherDetails">Wind Speed</li>
+                    <li id = "windSpeedDetails" class="embeddedWeatherDetails">km/hr</li>
+                  </div>
+                  <hr/>
+        <h6 id="current-coordinates">Detailed Search Current Location</h6>
+        <!--start of first row for search layout-->
+        <div class="row justify-content-center">
+          <div class="col">
+            <!-- <div class="input-group"> -->
+               <form id="searching-current-location">
+                 <span class="input-group-btn">
+                <button id="searching-current-location"
+                type="submit"
+                class="btn rounded-circle btn-outline-secondary"
+                >
+                  <i class="fas fa-search"></i>
+                </span>
+              </button>
+              </form>
+            <!-- </div> -->
+          </div>
+        </div>
+      </section>
+      <section>
+        <div>
+          <li id = "uvDetails">UV Index</li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="col rounded-circle">
+  <div class="card">
+    <div id="currentDate">
+      <hr />
+    </div>
+    <img
+    src="images/sunflower.jpg"
+    class="card-img-top rounded-circle"
+    alt="representative image"
+    />
+    <div class="card-body">
+                <p class="card-text" id="temp-high-low">high Temperature / Low Temperature</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <!--start of the third section for 5 day forecast-->
+      <section class="fiveDaysFutureForcast">
+        <div class="row justify-content-center">
+          <h5 class="futureForecast">The next 5 days</h5>
+          <!--start of 1st forecast day-->
+          <div class="col justify-content-around">
+            <div class="card">
+              <div>Tomorrow</div>
+              <img
+                src="images/sunflower.jpg"
+                class="card-img-top"
+                alt="representative image"
+              />
+              <div>18 °C / 9° C</div>
+            </div>
+          </div>
+          <!--start of 2nd forecast day-->
+          <div class="col justify-content-around">
+            <div class="card">
+              <div>Tmrw+1</div>
+              <img
+                src="images/sunflower.jpg"
+                class="card-img-top"
+                alt="representative image"
+              />
+              <div>18 °C / 9° C</div>
+            </div>
+          </div>
+          <!--start of 3rd forecast-->
+          <div class="col justify-content-around">
+            <div class="card">
+              <div>Tmrw+2</div>
+              <img
+                src="images/sunflower.jpg"
+                class="card-img-top"
+                alt="representative image"
+              />
+              <div>18 °C / 9° C</div>
+            </div>
+          </div>
+          <!--start of 4th forecast-->
+          <div class="col justify-content-around">
+            <div class="card">
+              <div>Tmrw+3</div>
+              <img
+                src="images/sunflower.jpg"
+                class="card-img-top"
+                alt="representative image"
+              />
+              <div>18 °C / 9° C</div>
+            </div>
+          </div>
+          <!--start of 5th forecast-->
+          <div class="col justify-content-around">
+            <div class="card">
+              <div>Tmrw+4</div>
+              <img
+                src="images/sunflower.jpg"
+                class="card-img-top"
+                alt="representative image"
+              />
+              <div>18 °C / 9° C</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+ 
+    <script src="src/index.js"></script>
+    <script src="src/timeanddate.js"></script>
+    <script src="src/currentLocation.js"></script>
+
+
+    <!-- <script src="src/index.js"></script> -->
+
+  </body>
+</html>
