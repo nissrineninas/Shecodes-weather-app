@@ -16,7 +16,6 @@ function showPosition(position) {
   let key = "ab10edc1d32f1dd18832060f89f088c3";
 
   let apiUrlCoord = `https://api.openweathermap.org/data/2.5/onecall?${coordinates}&exclude=minutely,hourly,daily,alerts&appid=${key}`;
-  console.log(apiUrlCoord);
   let coordString = `your coordinates are: latitude ${lat}, longitude ${lon}`;
   axios.get(`${apiUrlCoord}`).then(showUvIndex);
 
