@@ -11,7 +11,6 @@ function displayUsersCity(event) {
 }
 //connect to the api and get the weather data
 function getCityWeatherFromApi(readSearchedForCityName) {
-  console.log(readSearchedForCityName);
   let city = readSearchedForCityName;
   let unit = "metric";
   let key = "ab10edc1d32f1dd18832060f89f088c3";
@@ -24,7 +23,6 @@ function getWeatherData(response) {
   let temperature = Math.round(response.data.main.temp);
   let feelsLike = Math.round(response.data.main.feels_like);
 
-  let humidity = Math.round(response.data.main.humidity);
   let maxTemperature = Math.round(response.data.main.temp_max);
   let minTemperature = Math.round(response.data.main.temp_min);
   let windspeed = response.data.wind.speed;
@@ -38,10 +36,6 @@ function getWeatherData(response) {
   showFeelsLikeDisplay.innerHTML = `Feels like ${feelsLike} °C`;
   showWindSpeedDisplay.innerHTML = `${windspeed} km/hr`;
   showHighLowTempDisplay.innerHTML = `${maxTemperature}°C / ${minTemperature} °C`;
-
-  console.log(
-    `${temperature}\n${humidity}\n${maxTemperature}\n${minTemperature}\n${windspeed}`
-  );
 }
 
 let runWeatherSearch = document.querySelector("#searching-city");
